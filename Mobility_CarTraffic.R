@@ -73,13 +73,13 @@ result_sum <- indicator_2020[, c("date", "value")]
 result_sum$date <- str_c(result_sum$date, " 00:00:00")
 result_sum$topic <- "Mobilität"
 result_sum$variable_short <- "aufkommen_miv"
-result_sum$variable_long <- "Aufkommen motorisierter Individualverkehr an ausgewählten Zählstellen"
-result_sum$location <- 261
+result_sum$variable_long <- "Aufkommen MIV an ausgewählten Zählstellen"
+result_sum$location <- "Stadt Zürich"
 result_sum$unit <- "Anzahl"
 result_sum$source <- "Tiefbauamt, Stadt Zürich"
 result_sum$update <- "täglich"
 result_sum$public <- "ja"
-result_sum$description <- URL_GITHUB
+result_sum$description <-"https://github.com/statistikZH/covid19monitoring_mobility_ZaehlstellenMIVLVVelo"
 
 # Create the structure of the csv file for the relative indicator
 result_relative <- indicator_2020[, c("date", "value_relative")]
@@ -87,13 +87,14 @@ names(result_relative) <- c("date", "value")
 result_relative$date <- str_c(result_relative$date, " 00:00:00")
 result_relative$topic <- "Mobilität"
 result_relative$variable_short <- "aufkommen_miv_indexiert"
-result_relative$variable_long <- "Aufkommen motorisierter Individualverkehr an ausgewählten Zählstellen, relativ zu mittlerem Aufkommen 2019"
-result_relative$location <- 261
+result_relative$variable_long <- "Aufkommen MIV an ausgewählten Zählstellen, relativ zu mittlerem Aufkommen 2019"
+result_relative$location <- "Stadt Zürich"
 result_relative$unit <- "Anteil"
 result_relative$source <- "Tiefbauamt, Stadt Zürich"
 result_relative$update <- "täglich"
 result_relative$public <- "ja"
-result_relative$description <- URL_GITHUB
+result_relative$description <- "https://github.com/statistikZH/covid19monitoring_mobility_ZaehlstellenMIVLVVelo"
 
 # Write the results to the csv
-write_csv(rbind(result_sum, result_relative), PATH_RESULT_CSV, col_names = FALSE)
+write_csv(rbind(result_sum, result_relative), PATH_RESULT_CSV, col_names = TRUE)
+

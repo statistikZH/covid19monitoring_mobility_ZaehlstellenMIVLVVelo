@@ -280,11 +280,11 @@ df_2020 %>%
   mutate(value = sum_crosssection, 
          value_indexed = sum_crosssection / benchmark_crosssection * 100,
          topic = "Mobilität",
-         location = 261,
+         location = "Stadt Zürich",
          source = "Tiefbauamt, Stadt Zürich",
          update = "täglich",
          public = "ja", 
-         description = URL_GITHUB) %>%
+         description = "https://github.com/statistikZH/covid19monitoring_mobility_ZaehlstellenMIVLVVelo") %>%
   select(-c(sum_crosssection, benchmark_crosssection, typeofday)) -> df_2020
 
 
