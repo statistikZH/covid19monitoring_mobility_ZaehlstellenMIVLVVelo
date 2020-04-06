@@ -4,7 +4,7 @@ name: Update data
 
 on:
   schedule:
-    - cron:  '55 15 * * *' # everyday at 04:05 UTC
+    - cron:  '45 16 * * *' # everyday at 04:05 UTC
 
 #push:
 #    paths:
@@ -23,7 +23,8 @@ jobs:
     - uses: r-lib/actions/setup-r@master
     - name: Install R dependencies
       run: |
-         install.packages(c("here", "tidyverse", "magrittr", "lubridate")) remotes::install_deps(dependencies = TRUE)
+         install.packages(c("here", "tidyverse", "magrittr", "lubridate")) 
+         remotes::install_deps(dependencies = TRUE)
       shell: Rscript {0}
       
     # Prepare data
