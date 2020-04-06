@@ -70,7 +70,7 @@ indicator_2020 %>%
 
 # Create the structure of the csv file for the sum indicator
 result_sum <- indicator_2020[, c("date", "value")]
-result_sum$date <- str_c(result_sum$date, " 00:00:00")
+result_sum$date <- result_sum$date
 result_sum$topic <- "Mobilität"
 result_sum$variable_short <- "aufkommen_miv"
 result_sum$variable_long <- "Aufkommen MIV an ausgewählten Zählstellen"
@@ -84,7 +84,7 @@ result_sum$description <-"https://github.com/statistikZH/covid19monitoring_mobil
 # Create the structure of the csv file for the relative indicator
 result_relative <- indicator_2020[, c("date", "value_relative")]
 names(result_relative) <- c("date", "value")
-result_relative$date <- str_c(result_relative$date, " 00:00:00")
+result_relative$date <- result_relative$date
 result_relative$topic <- "Mobilität"
 result_relative$variable_short <- "aufkommen_miv_indexiert"
 result_relative$variable_long <- "Aufkommen MIV an ausgewählten Zählstellen, relativ zu mittlerem Aufkommen 2019"

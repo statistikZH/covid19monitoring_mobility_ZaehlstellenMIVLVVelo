@@ -255,7 +255,7 @@ df_daily %>%
   filter(!(code_location == "FZS_WEIN" & mode == "foot")) -> df_daily
   
 # Compute benchmark values based on 2019's data
-df_daily$date <- str_c(df_daily$date, " 00:00:00")
+df_daily$date <- df_daily$date
 
 df_daily %>%
   filter(year(date) == 2019) %>%
