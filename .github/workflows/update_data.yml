@@ -23,7 +23,7 @@ jobs:
     - uses: r-lib/actions/setup-r@master
     - name: Install R dependencies
       run: |
-        install.packages("tidyverse")
+         install.packages(c("here", "tidyverse", "magrittr", "lubridate")) remotes::install_deps(dependencies = TRUE)
       shell: Rscript {0}
       
     # Prepare data
