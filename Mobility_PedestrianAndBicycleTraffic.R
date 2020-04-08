@@ -281,7 +281,7 @@ df_2020 %>%
          value_indexed = sum_crosssection / benchmark_crosssection * 100,
          topic = "Mobilität",
          location = "Stadt Zürich",
-         source = "Tiefbauamt, Stadt Zürich",
+         source = "Dienstabteilung Verkehr, Sicherheitsdepartement",
          update = "täglich",
          public = "ja", 
          description = "https://github.com/statistikZH/covid19monitoring_mobility_ZaehlstellenMIVLVVelo") %>%
