@@ -1,4 +1,4 @@
-# Readme
+# covid19monitoring_mobility_ZaehlstellenMIVLVVelo
 
 The R scripts in this repository calculate indicators pertaining to ground-based mobility, specifically for the pedestrian, cycling, and car transport modes. The data originates from the official counting stations of the city of Zurich as part of the [city's open data offering](https://data.stadt-zuerich.ch):
 
