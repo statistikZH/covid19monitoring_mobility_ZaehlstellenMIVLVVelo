@@ -110,6 +110,8 @@ df %>%
             suffix = c("", "_y")) -> df
 rm(df_meta)
 
+#a few missings with name location removed
+df<-subset(df, is.na(name_location)==F)
 
 # Handle special cases ----------------------------------------------------
 
