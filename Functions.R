@@ -9,7 +9,7 @@ if (!require(lubridate)) {
 
 
 downloadData <- function(url, destination){
-  download.file(url, destination, method = "curl", quiet = TRUE)
+  download.file(url, destination, method = "auto", quiet = TRUE)
 }
 
 
