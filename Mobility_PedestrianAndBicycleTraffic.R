@@ -11,8 +11,11 @@ source("Parameters.R", encoding = "UTF-8")
 # Read and format the counting and location data --------------------------
 
 # Read and merge 2019 and 2020 data
-df <- read_csv(PATH_COUNTING_DATA_2019, col_types = COL_SPEC_COUNTING_DATA)
-df2020 <- read_csv(PATH_COUNTING_DATA_2020, col_types = COL_SPEC_COUNTING_DATA)
+download.file(PATH_COUNTING_DATA_2019, "staging.csv")
+df <- read_csv("staging.csv", col_types = COL_SPEC_COUNTING_DATA)
+download.file(PATH_COUNTING_DATA_2020, "staging.csv")
+df2020 <- read_csv("staging.csv", col_types = COL_SPEC_COUNTING_DATA)
+file.remove("staging.csv")
 df <- rbind(df, df2020)
 rm(df2020)
 
