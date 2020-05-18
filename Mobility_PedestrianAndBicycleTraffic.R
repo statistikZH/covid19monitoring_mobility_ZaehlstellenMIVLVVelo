@@ -242,24 +242,37 @@ rm(df_hourly)
 
 # The following counting locations are excluded from further analysis as they do
 # not have data for at least 2/3 of the days in 2019 and 2020
-df_daily %>%
-  filter(!(code_location == "VZS_ANDR" & mode == "bicycle")) %>%
-  filter(!(code_location == "VZS_BUCH" & mode == "bicycle")) %>%
-  filter(!(code_location == "VZS_FISC" & mode == "bicycle")) %>%
-  filter(!(code_location == "VZS_KLOW" & mode == "bicycle")) %>%
-  filter(!(code_location == "VZS_SAUM" & mode == "bicycle")) %>%
-  filter(!(code_location == "VZS_SCHE" & mode == "bicycle")) %>%
-  filter(!(code_location == "FZS_CHOR" & mode == "foot")) %>%
-  filter(!(code_location == "FZS_LETL" & mode == "foot")) %>%
-  filter(!(code_location == "FZS_ALTW" & mode == "foot")) %>%
-  filter(!(code_location == "VZS_FISC" & mode == "foot")) %>%
-  filter(!(code_location == "FZS_HARD" & mode == "foot")) %>%
-  filter(!(code_location == "VZS_KLOW" & mode == "foot")) %>%
-  filter(!(code_location == "FZS_LETD" & mode == "foot")) %>%
-  filter(!(code_location == "FZS_OHMO" & mode == "foot")) %>%
-  filter(!(code_location == "FZS_LANN" & mode == "foot")) %>%
-  filter(!(code_location == "FZS_WEIN" & mode == "foot")) -> df_daily
-  
+df_daily %>% 
+  filter(!(code_location == "VZS_ANDR" & mode == "bicycle")) %>% 
+  filter(!(code_location == "VZS_BUCH" & mode == "bicycle")) %>% 
+  filter(!(code_location == "VZS_FISC" & mode == "bicycle")) %>% 
+  filter(!(code_location == "VZS_KLOW" & mode == "bicycle")) %>% 
+  filter(!(code_location == "VZS_SAUM" & mode == "bicycle")) %>% 
+  filter(!(code_location == "VZS_SCHE" & mode == "bicycle")) %>% 
+ filter(!(code_location == "VZS_BERT" & mode == "bicycle")) %>% 
+ filter(!(code_location == "VZS_BINZ" & mode == "bicycle")) %>% 
+  filter(!(code_location == "VZS_HOFW" & mode == "bicycle")) %>% 
+  filter(!(code_location == "VZS_LIMC" & mode == "bicycle")) %>% 
+  filter(!(code_location == "VZS_LUXG" & mode == "bicycle")) %>% 
+  filter(!(code_location == "VZS_MYTH" & mode == "bicycle")) %>% 
+  filter(!(code_location == "VZS_SCHU" & mode == "bicycle")) %>% 
+  filter(!(code_location == "VZS_SIHL" & mode == "bicycle")) %>% 
+  filter(!(code_location == "FZS_CHOR" & mode == "foot")) %>% 
+  filter(!(code_location == "FZS_LETL" & mode == "foot")) %>% 
+  filter(!(code_location == "FZS_ALTW" & mode == "foot")) %>% 
+  filter(!(code_location == "VZS_FISC" & mode == "foot")) %>% 
+  filter(!(code_location == "FZS_HARD" & mode == "foot")) %>% 
+  filter(!(code_location == "VZS_KLOW" & mode == "foot")) %>% 
+  filter(!(code_location == "FZS_LETD" & mode == "foot")) %>% 
+  filter(!(code_location == "FZS_OHMO" & mode == "foot")) %>% 
+   filter(!(code_location == "FZS_ARBO" & mode == "foot")) %>% 
+   filter(!(code_location == "FZS_KLOE" & mode == "foot")) %>% 
+  filter(!(code_location == "FZS_LANN" & mode == "foot")) %>% 
+ filter(!(code_location == "FZS_LANS" & mode == "foot")) %>% 
+  filter(!(code_location == "FZS_OHMW" & mode == "foot")) %>% 
+  filter(!(code_location == "FZS_ZEHN" & mode == "foot")) %>% 
+ filter(!(code_location == "FZS_WEIN" & mode == "foot")) -> df_daily 
+
 # Compute benchmark values based on 2019's data
 df_daily$date <- df_daily$date
 
