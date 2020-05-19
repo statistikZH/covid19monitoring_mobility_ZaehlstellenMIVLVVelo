@@ -30,7 +30,7 @@ data_reduced2 <- removeNAObervations(data_reduced1, "AnzFahrzeuge")
 # Z050: data available for less than 2/3 of the year 2019
 # Z092: no data between 2020-02-19 and 2020-03-31
 # Z096: no data between 2020-01-01 and 2020-03-31
-data_reduced3 <- subset(data_reduced2, !(ZSID %in% c("Z006", "Z024", "Z050", "Z092", "Z096")))
+data_reduced3 <- subset(data_reduced2, !(ZSID %in% c("Z006", "Z024", "Z050", "Z092", "Z096", "Z019", "Z087")))
 
 
 # Gather all directions within each counting station
