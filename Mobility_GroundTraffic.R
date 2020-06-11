@@ -6,4 +6,4 @@ source("Mobility_PedestrianAndBicycleTraffic.R", encoding = "UTF-8")
 
 mob<-read.csv("Mobilität_AufkommenTerrestrischerVerkehr.csv", encoding="UTF-8")
 
-range(as.Date(mob$date))
+tapply(as.Date(mob$date), list(mob$variable_short), range)
