@@ -276,6 +276,11 @@ df_daily %>%
 # Compute benchmark values based on 2019's data
 df_daily$date <- df_daily$date
 
+
+#ee<-with(subset(df_daily, date>"2020-02-16"), tapply(count_crosssection, list(date, code_location), sum))
+#View(ee)
+
+
 df_daily %>%
   filter(year(date) == 2019) %>%
   group_by(date, mode, typeofday) %>%

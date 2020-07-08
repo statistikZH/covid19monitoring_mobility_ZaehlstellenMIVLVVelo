@@ -46,6 +46,13 @@ data_gathered$date <- strftime(data_gathered$datetime, "%Y-%m-%d")
 data_gathered$typeofday <- "Weekend"
 data_gathered$typeofday[strftime(data_gathered$datetime, "%u") <= 5] <- "Weekday"
 
+# Sind stationen ausgefallen seit mitte Februar 
+#ee<-with(subset(data_gathered, date>"2020-02_16"), tapply(value, list(date, StationID), sum))
+#sort(apply(ee,2, sum), na.last=T)
+
+#Weg damit!
+data_gathered<-(subset(data_gathered, !StationID%in%c("Z037", "Z051", "Z088")))
+
 # Remove counting station for days when during more than three hours no data
 # is available. Then aggregate the remaining data over all relevant counting
 # locations
