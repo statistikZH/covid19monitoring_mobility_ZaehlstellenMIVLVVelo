@@ -51,7 +51,7 @@ data_gathered$typeofday[strftime(data_gathered$datetime, "%u") <= 5] <- "Weekday
 #sort(apply(ee,2, sum), na.last=T)
 
 #Weg damit!
-data_gathered<-(subset(data_gathered, !StationID%in%c("Z037", "Z051", "Z088")))
+data_gathered<-(subset(data_gathered, !StationID%in%c("Z037", "Z051", "Z088", "Z086")))
 
 # Remove counting station for days when during more than three hours no data
 # is available. Then aggregate the remaining data over all relevant counting
