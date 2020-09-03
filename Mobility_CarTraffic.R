@@ -50,7 +50,7 @@ data_gathered$typeofday[strftime(data_gathered$datetime, "%u") <= 5] <- "Weekday
 #ee<-with(subset(data_gathered, date>"2020-02_16"), tapply(value, list(date, StationID), sum))
 #sort(apply(ee,2, sum), na.last=T)
 
-#Weg damit!
+#Weg damit! (Z077?)
 data_gathered<-(subset(data_gathered, !StationID%in%c("Z037", "Z051", "Z088", "Z086")))
 
 # Remove counting station for days when during more than three hours no data
