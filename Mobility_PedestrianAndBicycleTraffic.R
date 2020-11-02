@@ -274,7 +274,7 @@ df_daily %>%
   filter(!(code_location == "FZS_ALTO" & mode == "foot")) %>% 
   filter(!(code_location == "FZS_CASS" & mode == "foot")) %>% 
    filter(!(code_location == "FZS_KATZ" & mode == "foot")) %>% 
-  
+
  filter(!(code_location == "FZS_WEIN" & mode == "foot")) -> df_daily 
 
 # Compute benchmark values based on 2019's data
