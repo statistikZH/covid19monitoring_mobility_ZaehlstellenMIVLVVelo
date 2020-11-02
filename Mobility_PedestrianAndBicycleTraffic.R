@@ -273,7 +273,7 @@ df_daily %>%
   filter(!(code_location == "FZS_ZEHN" & mode == "foot")) %>% 
   filter(!(code_location == "FZS_ALTO" & mode == "foot")) %>% 
   filter(!(code_location == "FZS_CASS" & mode == "foot")) %>% 
-  
+   filter(!(code_location == "FZS_KATZ" & mode == "foot")) %>% 
   
  filter(!(code_location == "FZS_WEIN" & mode == "foot")) -> df_daily 
 
@@ -281,8 +281,8 @@ df_daily %>%
 df_daily$date <- df_daily$date
 
 
-#ee<-with(subset(df_daily, date>"2020-02-16"), tapply(count_crosssection, list(date, code_location), sum))
-#View(ee)
+ee<-with(subset(df_daily, date>"2020-02-16"), tapply(count_crosssection, list(date, code_location), sum))
+View(ee)
 
 
 df_daily %>%
