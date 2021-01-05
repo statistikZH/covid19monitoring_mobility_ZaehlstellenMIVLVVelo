@@ -10,9 +10,16 @@ source("Functions.R", encoding = "UTF-8")
 
 # Download the data
 downloadData(URL_MIV_2020, PATH_MIV_2020)
+downloadData(URL_MIV_2021, PATH_MIV_2021)
+
 
 # Load the data
-data_raw <- read.csv(PATH_MIV_2020, stringsAsFactors = FALSE)
+data_raw20 <- read.csv(PATH_MIV_2020, stringsAsFactors = FALSE)
+# Load the data
+data_raw21 <- read.csv(PATH_MIV_2021, stringsAsFactors = FALSE)
+data_raw<-rbind(data_raw20, data_raw21)
+rm(data_raw20)
+rm(data_raw21)
 
 # Change to proper datetime format
 data_raw$datetime <- as.POSIXct(data_raw$MessungDatZeit, 

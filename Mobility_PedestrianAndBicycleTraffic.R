@@ -15,9 +15,14 @@ download.file(PATH_COUNTING_DATA_2019, "staging.csv")
 df <- read_csv("staging.csv", col_types = COL_SPEC_COUNTING_DATA)
 download.file(PATH_COUNTING_DATA_2020, "staging.csv")
 df2020 <- read_csv("staging.csv", col_types = COL_SPEC_COUNTING_DATA)
+download.file(PATH_COUNTING_DATA_2021, "staging.csv")
+df2021 <- read_csv("staging.csv", col_types = COL_SPEC_COUNTING_DATA)
+
 file.remove("staging.csv")
-df <- rbind(df, df2020)
+df <- rbind(df, df2020, df2021)
 rm(df2020)
+rm(df2021)
+
 
 # Rename columns
 names(df) <- c("fk_counter", "fk_timelocation", "datetime", "velo_in", 
@@ -295,7 +300,7 @@ df_benchmark
 
 # Compute 2020 data
 df_daily %>%
-  filter(year(date) == 2020) %>%
+  filter(year(date) >= 2020) %>%
   group_by(date, mode, typeofday) %>%
   summarise(sum_crosssection = sum(count_crosssection)) %>%
   ungroup() -> df_2020
