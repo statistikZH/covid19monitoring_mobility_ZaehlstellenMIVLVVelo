@@ -268,7 +268,9 @@ df_daily %>%
   filter(!(code_location == "VZS_FISC" & mode == "foot")) %>% 
   filter(!(code_location == "FZS_HARD" & mode == "foot")) %>% 
   filter(!(code_location == "VZS_KLOW" & mode == "foot")) %>% 
-  filter(!(code_location == "FZS_LETD" & mode == "foot")) %>% 
+  filter(!(code_location == "VZS_MILI" & mode == "bicycle")) %>% 
+   filter(!(code_location == "VZS_TOED" & mode == "bicycle")) %>% 
+   filter(!(code_location == "FZS_LETD" & mode == "foot")) %>% 
   filter(!(code_location == "FZS_OHMO" & mode == "foot")) %>% 
    filter(!(code_location == "FZS_ARBO" & mode == "foot")) %>% 
    filter(!(code_location == "FZS_KLOE" & mode == "foot")) %>% 
@@ -280,7 +282,6 @@ df_daily %>%
   filter(!(code_location == "FZS_CASS" & mode == "foot")) %>% 
   filter(!(code_location == "FZS_MILI" & mode == "foot")) %>% 
   filter(!(code_location == "FZS_KATZ" & mode == "foot")) %>% 
-
  filter(!(code_location == "FZS_WEIN" & mode == "foot")) -> df_daily 
 
 # Compute benchmark values based on 2019's data
