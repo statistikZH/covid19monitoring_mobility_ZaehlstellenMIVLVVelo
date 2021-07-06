@@ -263,7 +263,8 @@ df_daily %>%
   filter(!(code_location == "VZS_SCHU" & mode == "bicycle")) %>% 
   filter(!(code_location == "VZS_SIHL" & mode == "bicycle")) %>% 
  filter(!(code_location == "VZS_LANS" & mode == "bicycle")) %>% 
-   filter(!(code_location == "FZS_CHOR" & mode == "foot")) %>% 
+    filter(!(code_location == "VZS_TALS" & mode == "bicycle")) %>% 
+  filter(!(code_location == "FZS_CHOR" & mode == "foot")) %>% 
   filter(!(code_location == "FZS_LETL" & mode == "foot")) %>% 
   filter(!(code_location == "FZS_ALTW" & mode == "foot")) %>% 
   filter(!(code_location == "VZS_FISC" & mode == "foot")) %>% 
