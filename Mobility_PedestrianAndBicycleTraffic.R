@@ -17,11 +17,17 @@ download.file(PATH_COUNTING_DATA_2020, "staging.csv")
 df2020 <- read_csv("staging.csv", col_types = COL_SPEC_COUNTING_DATA)
 download.file(PATH_COUNTING_DATA_2021, "staging.csv")
 df2021 <- read_csv("staging.csv", col_types = COL_SPEC_COUNTING_DATA)
+download.file(PATH_COUNTING_DATA_2022, "staging.csv")
+df2022 <- read_csv("staging.csv", col_types = COL_SPEC_COUNTING_DATA)
+
+
+
 
 file.remove("staging.csv")
-df <- rbind(df, df2020, df2021)
+df <- rbind(df, df2020, df2021, df2022)
 rm(df2020)
 rm(df2021)
+rm(df2022)
 
 
 # Rename columns
