@@ -116,7 +116,7 @@ result_relative$public <- "ja"
 result_relative$description <- "https://github.com/statistikZH/covid19monitoring_mobility_ZaehlstellenMIVLVVelo"
 
 # Write the results to the csv
-write.table(rbind(result_sum, result_relative), PATH_RESULT_CSV, col.names=T, row.names = F ,sep=",")
+write.table(rbind(result_sum, result_relative), PATH_RESULT_CSV, col.names=T, row.names = F ,sep=",", fileEncoding = "UTF-8")
 
 #are all counting stations active
 #ee<-tapply(data_gathered$value, list(data_gathered$date, data_gathered$StationID), sum)

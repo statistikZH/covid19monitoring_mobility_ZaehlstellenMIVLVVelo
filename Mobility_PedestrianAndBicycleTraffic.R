@@ -340,7 +340,7 @@ df_2020 %>%
          unit = "Anzahl") %>%
   select(date, value, topic, variable_short, variable_long, location, unit, 
          source, update, public, description) %>%
-  write_csv(PATH_RESULT_CSV, append = TRUE, quote = FALSE)
+  write.table(PATH_RESULT_CSV, append = TRUE,  row.names = F, sep= ",", col.names=F, fileEncoding = "UTF-8")
 
 df_2020 %>%
   filter(mode == "bicycle") %>%
@@ -351,7 +351,7 @@ df_2020 %>%
          value = value_indexed) %>%
   select(date, value, topic, variable_short, variable_long, location, unit, 
          source, update, public, description) %>%
-  write_csv(PATH_RESULT_CSV, append = TRUE, quote = FALSE)
+ write.table(PATH_RESULT_CSV, append = TRUE, row.names = F, sep= ",", col.names=F, fileEncoding = "UTF-8") 
 
 df_2020 %>%
   filter(mode == "foot") %>%
@@ -360,8 +360,7 @@ df_2020 %>%
          unit = "Anzahl") %>%
   select(date, value, topic, variable_short, variable_long, location, unit, 
          source, update, public, description) %>%
-  write_csv(PATH_RESULT_CSV, append = TRUE, quote = FALSE)
-
+   write.table(PATH_RESULT_CSV, append = TRUE,  row.names = F, sep= ",", col.names=F, fileEncoding = "UTF-8")
 df_2020 %>%
   filter(mode == "foot") %>%
   select(-c(value)) %>%
@@ -371,6 +370,6 @@ df_2020 %>%
          value = value_indexed) %>%
   select(date, value, topic, variable_short, variable_long, location, unit, 
          source, update, public, description) %>%
-  write_csv(PATH_RESULT_CSV, append = TRUE, quote = FALSE)
+  write.table(PATH_RESULT_CSV, append = TRUE,  row.names = F, sep= ",", col.names=F, fileEncoding = "UTF-8")
 
 
